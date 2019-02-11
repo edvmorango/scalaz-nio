@@ -3,6 +3,7 @@ import sbt.Keys._
 
 object Scalaz {
   lazy val scalazVersion = "7.2.27"
+  lazy val scalazZioVersion = "0.6.1"
 
   val testDeps = Seq(
     "org.scalacheck" %% "scalacheck"   % "1.14.0" % "test",
@@ -15,7 +16,8 @@ object Scalaz {
 
   val compileAndTest = Seq(
     "org.scalaz" %% "scalaz-core" % scalazVersion % "compile, test",
-    "org.scalaz" %% "scalaz-zio"  % "0.6.1"
+    "org.scalaz" %% "scalaz-zio"  % scalazZioVersion,
+    "org.scalaz" %% "scalaz-zio-interop-scalaz7x" % scalazZioVersion
   )
 
   private val stdOptions = Seq(
